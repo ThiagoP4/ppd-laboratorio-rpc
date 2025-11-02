@@ -43,7 +43,7 @@ Para executar a calculadora, é necessário abrir dois terminais:
     Na pasta do projeto, execute:
 
     ```bash
-    python3 grpcCalc_server.py
+    python3 atividade_1_calculadora/grpcCalc_server.py
     ```
 
     O servidor será iniciado e ficará aguardando conexões na porta 50051.
@@ -51,7 +51,7 @@ Para executar a calculadora, é necessário abrir dois terminais:
 2.  **Terminal 2: Iniciar o Cliente**
     Em um novo terminal (com o `venv` ativado), execute:
     ```bash
-    python3 grpcCalc_client.py
+    python3 atividade_1_calculadora/grpcCalc_client.py
     ```
     Um menu interativo aparecerá, permitindo ao usuário escolher a operação (Soma, Subtração, Multiplicação, Divisão) e inserir os operandos.
 
