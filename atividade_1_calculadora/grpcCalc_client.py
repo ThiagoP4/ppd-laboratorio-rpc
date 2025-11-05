@@ -1,9 +1,13 @@
 import grpc
-
+import os
 import grpcCalc_pb2
 import grpcCalc_pb2_grpc
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def print_menu():
+    clear_screen()
     print("Selecione a operação:")
     print("1. Adição")
     print("2. Subtração")
@@ -11,7 +15,6 @@ def print_menu():
     print("4. Divisão")
     print("5. Sair")
     return input("Digite sua escolha (1/2/3/4/5): ")
-
 
 def get_numbers():
     while True:
@@ -35,13 +38,23 @@ def run_client():
                 print("Encerrando o cliente.")
                 break
 
+            # --- INÍCIO DA NARRAÇÃO ---
+            if choice == '1':
+                print("\n>>> ETAPA: Testando SOMA.")
+            elif choice == '2':
+                print("\n>>> ETAPA: Testando SUBTRAÇÃO.")
+            elif choice == '3':
+                print("\n>>> ETAPA: Testando MULTIPLICAÇÃO.")
+            elif choice == '4':
+                print("\n>>> ETAPA: Testando DIVISÃO POR ZERO (ex: 10 / 0).")
+            # --- FIM DA NARRAÇÃO ---
+
             if choice not in ['1', '2', '3', '4']:
                 print("Escolha inválida. Tente novamente.")
-                continue
             
-            x, y = get_numbers()   
-
-            args_request = grpcCalc_pb2.args(numOne=x, numTwo=y)
+            else:
+                x, y = get_numbers()   
+                args_request = grpcCalc_pb2.args(numOne=x, numTwo=y) 
 
             try:
                 if choice == '1':
@@ -61,6 +74,8 @@ def run_client():
                     print(f"Erro: {e.details()}")
                 else:
                     print(f"Erro inesperado: {e}")
+
+            input("\nPressione ENTER para continuar...")
      
 if __name__ == '__main__':
     run_client()

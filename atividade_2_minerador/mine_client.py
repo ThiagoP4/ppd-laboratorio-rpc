@@ -150,10 +150,12 @@ def run_client():
 
             try:
                 if choice == '1': # getTransactionId
+                    print("\n>>> ETAPA: Verificando a transação atual pendente...")
                     response = stub.getTransactionId(mine_grpc_pb2.void())
                     print(f"\nID da transação atual (pendente): {response.result}")
 
                 elif choice == '2': # getChallenge
+                    print("\n>>> ETAPA: Verificando o desafio de uma transação.")
                     trans_id = get_transaction_id_input()
                     if trans_id != -1:
                         req = mine_grpc_pb2.transactionId(transactionId=trans_id)
@@ -161,6 +163,7 @@ def run_client():
                         print(f"\nDesafio: {response.result}")
 
                 elif choice == '3': # getTransactionStatus
+                    print("\n>>> ETAPA: Verificando o status de uma transação.")
                     trans_id = get_transaction_id_input()
                     if trans_id != -1:
                         req = mine_grpc_pb2.transactionId(transactionId=trans_id)
@@ -173,6 +176,7 @@ def run_client():
                             print("\nStatus: -1 (Inválido)")
 
                 elif choice == '4': # getWinner
+                    print("\n>>> ETAPA: Verificando o vencedor de uma transação.")
                     trans_id = get_transaction_id_input()
                     if trans_id != -1:
                         req = mine_grpc_pb2.transactionId(transactionId=trans_id)
@@ -185,6 +189,7 @@ def run_client():
                             print(f"\nVencedor: Cliente ID {response.result}")
 
                 elif choice == '5': # getSolution
+                    print("\n>>> ETAPA: Verificando a solução/status de uma transação.")
                     trans_id = get_transaction_id_input()
                     if trans_id != -1:
                         req = mine_grpc_pb2.transactionId(transactionId=trans_id)
