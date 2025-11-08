@@ -160,9 +160,9 @@ ppd-laboratorio-rpc/
 └── README.md
 ```
 
-Tecnologias Utilizadas
-Python 3
-gRPC
-Protocol Buffers
-Threading (cliente e servidor)
-Hashlib (SHA-1)
+### Tecnologias Utilizadas
+- Python 3
+- gRPC
+- Protocol Buffers
+- Threading (cliente e servidor)
+- Hashlib (SHA-1)
