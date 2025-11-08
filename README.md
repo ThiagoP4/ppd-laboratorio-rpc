@@ -7,7 +7,8 @@
 ## Integrantes do Grupo
 
 - Thiago D'Angellis Santana Silva - 2214222
-- Olivia Buzzo Gaona - 2
+- Olivia Buzzo Gaona - 2213372
+- Pedro Henrique Araujo - 
 
 ## 1. Configuração do Ambiente
 
@@ -62,7 +63,12 @@ Para rodar o projeto completo, é necessário executar os **dois servidores** (C
     ```bash
     python3 atividade_1_calculadora/grpcCalc_client.py
     ```
-    Um menu interativo aparecerá, permitindo ao usuário escolher a operação (Soma, Subtração, Multiplicação, Divisão) e inserir os operandos.
+    O cliente exibe um menu interativo permitindo realizar:
+-	Soma
+-	Subtração
+-	Multiplicação
+-	Divisão (com tratamento de divisão por zero)
+
 
 ### Metodologia de Implementação
 
@@ -100,7 +106,13 @@ Foram realizados testes manuais para validar todas as funcionalidades:
     ```bash
     python3 atividade_2_minerador/mine_client.py
     ```
-    Um menu interativo aparecerá para testar as 6 funções da mineração.
+    O cliente possui 6 funcionalidades, incluindo:
+-	Consultar ID da transação
+-	Consultar desafio
+-	Verificar status
+-	Consultar vencedor
+-	Consultar solução
+-	Minerar (com múltiplas threads)
 
 3.  **Teste de Competição (Opcional):**
     Para simular a "corrida" da mineração, você pode abrir um *quinto terminal* e rodar um segundo `mine_client.py`. Ambos os clientes competirão para resolver o mesmo desafio.
@@ -127,3 +139,26 @@ A Atividade 1 foi implementada usando o framework **Python/gRPC**. A arquitetura
 
 * **Nota de Implementação (Sobre o Desafio):**
     A especificação do laboratório pedia um *range* de dificuldade de `[1..20]` para o desafio. Para fins de demonstração e para viabilizar a gravação do vídeo de 5 minutos, o *range* no `mine_server.py` foi ajustado para `[4, 5]`. Esta alteração permite comprovar a funcionalidade da Prova de Trabalho (PoW) sem exigir um tempo de espera excessivo para a mineração.
+
+
+### Estrutura do Repositório
+ppd-laboratorio-rpc/
+├── atividade_1_calculadora/
+│   ├── grpcCalc_server.py
+│   ├── grpcCalc_client.py
+│   └── grpcCalc.proto
+├── atividade_2_minerador/
+│   ├── mine_server.py
+│   ├── mine_client.py
+│   └── mine_grpc.proto
+├── requirements.txt
+├── VideoAtividade1.mp4
+├── VideoAtividade2.mp4
+└── README.md
+
+Tecnologias Utilizadas
+Python 3
+gRPC
+Protocol Buffers
+Threading (cliente e servidor)
+Hashlib (SHA-1)
