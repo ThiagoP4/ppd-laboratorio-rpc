@@ -8,7 +8,7 @@
 
 - Thiago D'Angellis Santana Silva - 2214222
 - Olivia Buzzo Gaona - 2213372
-- Pedro Henrique Araujo - 
+- Pedro Henrique Araujo da Silva - 2212765
 
 ## 1. Configuração do Ambiente
 
