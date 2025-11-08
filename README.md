@@ -143,6 +143,9 @@ A Atividade 1 foi implementada usando o framework **Python/gRPC**. A arquitetura
 
 ### Estrutura do Repositório
 ppd-laboratorio-rpc/
+
+```text
+ppd-laboratorio-rpc/
 ├── atividade_1_calculadora/
 │   ├── grpcCalc_server.py
 │   ├── grpcCalc_client.py
@@ -155,6 +158,7 @@ ppd-laboratorio-rpc/
 ├── VideoAtividade1.mp4
 ├── VideoAtividade2.mp4
 └── README.md
+```
 
 Tecnologias Utilizadas
 Python 3
